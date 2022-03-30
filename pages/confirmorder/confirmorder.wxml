@@ -1,0 +1,193 @@
+<view class="header">
+  <!-- 左边 -->
+  <view class="deader-l">
+    <view wx:if="{{isShowAddress}}">
+      <view class="address">
+        收货人：
+        <text>{{defaultAddress.ReceiveName}}</text>
+        <text class="mobile">{{defaultAddress.Mobile}}</text>
+      </view>
+      <view class="detail">
+        <text>{{defaultAddress.ProvinceName}}</text>
+        <text>{{defaultAddress.CityName}}</text>
+        <text>{{defaultAddress.DistrictName}}</text>
+        <text>{{defaultAddress.DetailedAddress}}</text>
+      </view>
+    </view>
+    <view wx:else class="noAddress">您还没有添加默认收货地址，赶快去添加吧</view>
+  </view>
+  <!-- 右边 -->
+  <view class="header-r" bindtap="goAddressList">
+    <text class="iconfont icon-arrow-right"></text>
+  </view>
+</view>
+<!-- tab主要内容 -->
+<view>
+<!-- 选择支付方式 -->
+  <view class="pay">
+    <view class="payTitle">选择支付方式</view>
+    <view class="payChose">
+      <view wx:if="{{isWx}}" bindtap="chosePay" data-type="2" class="payItem"><van-icon size="80rpx" color="#6ac75e" name="wechat" /><view class="chosepay {{payActive=='2'?'payActive':''}}">微信支付</view></view>
+      <view wx:if="{{isIc}}" bindtap="chosePay" data-type="3" class="payItem"><van-icon size="80rpx" color="#ffc700" name="gold-coin" /><view class="chosepay {{payActive=='3'?'payActive':''}}">会员支付</view></view>
+      
+    </view>
+  </view>
+  <view class="tabtop">
+    <text class="tabtitle">配送方式</text>
+    <view>线上商城配送默认门店自提</view>
+  </view>
+  <van-radio-group value="{{radio}}">
+    <van-cell-group>
+      <van-cell title="门店自提" clickable data-name="1" bind:click="onClick">
+        <van-radio slot="right-icon" name="1" />
+      </van-cell>
+      <van-cell title="送货上门" clickable data-name="0" bind:click="onClick">
+        <van-radio slot="right-icon" name="0" />
+      </van-cell>
+      <van-cell border="false" title="网点自提" clickable data-name="2" bind:click="onClick">
+        <van-radio slot="right-icon" name="2" />
+      </van-cell>
+    </van-cell-group>
+  </van-radio-group>
+  <view>
+    <view wx:if="{{radio==0}}">
+      <view class="order">
+        <block wx:for="{{prepaidOrderList}}" wx:key="index">
+          <view class="orderico">
+            <text class="iconfont icon-dianpu-copy"></text>
+            <text>{{item.SellerName}}</text>
+          </view>
+          <!-- 商品 -->
+          <view class="goodslist">
+            <view class="goodsimg">
+              <image lazy-load="{{true}}" src="{{m1.imageUrl(item.Img)}}"></image>
+            </view>
+            <view class="info">
+              <text>{{item.CmdName}}</text>
+              <text>{{item.SpecName}}</text>
+            </view>
+            <view></view>
+            <view class="price">
+              <text>￥{{item.Price}}</text>
+              <text>x{{item.Goods_Number}}</text>
+            </view>
+          </view>
+        </block>
+        <!-- 数量 -->
+        <view class="number">
+          <view>
+            商品数量：
+            <text class="font-size">{{allNumber}}</text>
+          </view>
+          <view>
+            小计：
+            <text class="font-size">{{xiaojiMonny}}</text>
+          </view>
+        </view>
+        <!-- 留言 -->
+        <view class="footer">
+          <view>我要留言</view>
+          <textarea class="liuyan" bindblur="bindTextAreaBlur" placeholder="下单前，有任何问题请备注" />
+        </view>
+      </view>
+    </view>
+    <view wx:elif="{{radio==1}}">
+      <view class="addresstext">门店地址：{{sellerAddr}}</view>
+      <view class="order">
+        <block wx:for="{{prepaidOrderList}}" wx:key="index">
+          <view class="orderico">
+            <text class="iconfont icon-dianpu-copy"></text>
+            <text>{{item.SellerName}}</text>
+          </view>
+          <!-- 商品 -->
+          <view class="goodslist">
+            <view class="goodsimg">
+              <image lazy-load="{{true}}" src="{{m1.imageUrl(item.Img)}}"></image>
+            </view>
+            <view class="info">
+              <text>{{item.CmdName}}</text>
+              <text>{{item.SpecName}}</text>
+            </view>
+            <view></view>
+            <view class="price">
+              <text>￥{{item.Price}}</text>
+              <text>x{{item.Goods_Number}}</text>
+            </view>
+          </view>
+        </block>
+        <!-- 数量 -->
+        <view class="number">
+          <view>
+            商品数量：
+            <text class="font-size">{{allNumber}}</text>
+          </view>
+          <view>
+            小计：
+            <text class="font-size">{{xiaojiMonny}}</text>
+          </view>
+        </view>
+        <!-- 留言 -->
+        <view class="footer">
+          <view>我要留言</view>
+          <textarea class="liuyan" bindblur="bindTextAreaBlur" placeholder="下单前，有任何问题请备注" />
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+    <!-- bind:tap="showPopup" -->
+      <view class="addresstext" >网点地址：{{outletsAddr}}<text></text></view>
+      <view class="order">
+        <block wx:for="{{prepaidOrderList}}" wx:key="index">
+          <view class="orderico">
+            <text class="iconfont icon-dianpu-copy"></text>
+            <text>{{item.SellerName}}</text>
+          </view>
+          <!-- 商品 -->
+          <view class="goodslist">
+            <view class="goodsimg">
+              <image lazy-load="{{true}}" src="{{m1.imageUrl(item.Img)}}"></image>
+            </view>
+            <view class="info">
+              <text>{{item.CmdName}}</text>
+              <text>{{item.SpecName}}</text>
+            </view>
+            <view></view>
+            <view class="price">
+              <text>￥{{item.Price}}</text>
+              <text>x{{item.Goods_Number}}</text>
+            </view>
+          </view>
+        </block>
+        <!-- 数量 -->
+        <view class="number">
+          <view>
+            商品数量：
+            <text class="font-size">{{allNumber}}</text>
+          </view>
+          <view>
+            小计：
+            <text class="font-size">{{xiaojiMonny}}</text>
+          </view>
+        </view>
+        <!-- 留言 -->
+        <view class="footer">
+          <view>我要留言</view>
+          <textarea class="liuyan" bindblur="bindTextAreaBlur" placeholder="下单前，有任何问题请备注" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 运费 -->
+<van-submit-bar price="{{ allMonny + expressFreight*100 }}" button-text="确认支付" bind:submit="onSubmit" disabled="{{btnFlag}}">
+  <view slot="">
+    运费：
+    <text style="color:#EE0A24;font-size:18px;">¥{{expressFreight}}</text>
+  </view>
+</van-submit-bar>
+<!-- 弹出层 -->
+<van-popup show="{{ outletsShow }}" round bind:close="onCloseShow" custom-style="height: 40%" position="bottom">
+  <van-picker columns="{{ Outlets }}" bind:change="onPickerChange" bind:confirm="onPickerConfirm" bind:cancel="onPickerCancel" show-toolbar />
+</van-popup>
+<!-- 导入wxs -->
+<wxs src="./image.wxs" module="m1"></wxs>

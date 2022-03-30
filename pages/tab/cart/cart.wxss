@@ -1,0 +1,150 @@
+.cartallview {
+  padding-bottom: 166rpx;
+}
+
+.storehed {
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+  font-size: 30rpx;
+  border-top: 1rpx solid #f5f5f5;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+/* 单页全局 */
+
+icon {
+  margin-left: 20rpx;
+}
+
+text {
+  margin-left: 20rpx;
+}
+
+.shopgoodlist {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 28rpx;
+  height: 230rpx;
+  padding-top: 20rpx;
+  border-top: 1rpx solid #f5f5f5;
+  border-bottom: 1rpx solid #f5f5f5;
+  position: relative;
+}
+
+.shopgoodlistimg {
+  margin: 0 20rpx;
+  height: 120rpx;
+  width: 120rpx;
+}
+
+.delimg{
+   width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 30px;
+  top:15px;
+}
+
+.shopgoodlist .goodsdata text {
+  display: block;
+}
+
+.shopgoodlist .goodsdata .goodsname {
+  height: 70rpx;
+}
+
+.shopgoodlist .goodsdata .specification {
+  font-size: 25rpx;
+  color: #b2b2b2;
+}
+
+.shopgoodlist .goodsdata .price {
+  margin-top: 5rpx;
+  font-size: 29rpx;
+  color: #f10000;
+}
+
+.shopgoodlist .goodsdata .goodsnum {
+  position: absolute;
+  right: 30rpx;
+  bottom: 20rpx;
+}
+
+.shopgoodlist .goodsdata .goodsnum text {
+  margin-left: 0;
+  display: inline-block;
+  border: 1rpx solid #f5f5f5;
+  width: 90rpx;
+  height: 53rpx;
+  line-height: 53rpx;
+  text-align: center;
+}
+
+/* 合计 */
+
+.allselected {
+  margin-left: 0;
+  width: 100%;
+  background: #fafafa;
+  height: 100rpx;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 0;
+}
+
+.allselected view {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.allselected view .allprices {
+  flex: 1;
+  margin: 0;
+  color: #ec5151;
+}
+
+.allselected view .placeanorder {
+  margin: 0;
+  flex: 1;
+  background-color: #ec5151;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #fff;
+}
+
+.cartNull{
+  margin-top: 88rpx;
+
+}
+/* 空购物车 */
+.order{
+  margin-top: 200rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.order text{
+  color: #9C9C9C;
+  margin-top: 40rpx;
+}
+.gotoshop{
+  width: 180rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color:#03C1F3;
+  text-align: center;
+  margin-top: 40rpx;
+  border-radius: 30rpx;
+  border: 1rpx solid #71CAF2;
+}
+.order image{
+  width: 315rpx;
+  height: 220rpx;
+}

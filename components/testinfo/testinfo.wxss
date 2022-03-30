@@ -1,0 +1,54 @@
+/* components/testinfo/testinfo.wxss */
+.card-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20rpx;
+  padding: 30rpx;
+  background-color: #FFFFFF;
+}
+
+.item-left {
+  position: relative;
+}
+
+.item-left image {
+  width: 300rpx;
+  display: block;
+  height: 300rpx;
+  margin-right: 30rpx;
+  border-radius: 20rpx;
+}
+
+.item-right {
+  font-size: 16px;
+}
+
+.item-right view:nth-child(1) {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 6rpx;
+}
+
+.item-right view:nth-last-child(1) {
+  color: #848484;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.item-right view {
+  line-height: 25px;
+}
+
+.item-right view:nth-child(5) image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+  
+  
+}
+
+.red {
+  color: red;
+}

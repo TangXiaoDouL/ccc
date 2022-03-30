@@ -1,0 +1,27 @@
+
+  var imageUrl = function (imgUrl){
+    var http='https://img.ego360.cn/'
+    var image=http+imgUrl
+
+    return image
+}
+
+var imglength=function(imgUrl){
+    if(imgUrl=='' || imgUrl==null){
+        return true 
+    }else{
+        return false
+        }
+}
+
+var allMonny=function(m){
+  var monny=0
+   monny+=m
+  return monny
+}
+
+  module.exports={
+    imageUrl:imageUrl,
+    imglength:imglength,
+    allMonny:allMonny
+  }

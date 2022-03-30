@@ -1,0 +1,27 @@
+
+var imageUrl = function (imgUrl) {
+  var str=imgUrl
+  var i = str.indexOf('"')
+  var k = str.lastIndexOf('"')
+  str = str.slice(i + 1, k)
+  var http = 'https://img.ego360.cn'
+  str=str.replace('http://{0}',http)
+  return str
+}
+
+var fontReaplace = function (font) {
+  var str = font
+  str = str.replace('类', '')
+  return str
+}
+
+var over = function (a, b) {
+
+  return a + b
+}
+
+module.exports = {
+  imageUrl: imageUrl,
+  fontReaplace: fontReaplace,
+  over: over
+}

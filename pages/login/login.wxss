@@ -1,0 +1,88 @@
+/* pages/login/login.wxss */
+.login-img{
+  width: 100%;
+  position: relative;
+}
+.login-img image{
+  width: 100%;
+}
+
+.login-img .logo {
+  width: 300rpx;
+  border-radius: 20rpx;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 7%;
+}
+/* 登陆 */
+.login-form{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 0 20rpx;
+}
+.login-panner{ 
+  /* box-shadow: 0rpx 3rpx 20rpx 10rpx #ccc; */
+  /* padding: 0 20rpx; */
+  background-color: #fff;
+  width: 710rpx;
+  border-radius: 30rpx;
+  padding: 20rpx 20rpx  60rpx 20rpx;
+}
+.login-title{
+  margin-top: 20rpx;
+  height: 85rpx;
+  font-size: 36rpx;
+
+}
+.denglu{
+  padding-bottom: 10rpx;
+  border-radius: 6rpx;
+  border-bottom: 8rpx solid orangered;
+}
+
+.login{
+  color: #FEFFFC;
+  /* background: linear-gradient(#37B5FD,#2B7AF8); */
+  background-color: #107afd;
+  border-radius: 40rpx;
+  font-weight: normal;
+  font-size: 34rpx;
+  height: 100rpx!important;
+  line-height: 100rpx!important;
+  width: 100%!important;
+  margin-top: 40rpx;
+  padding: 0;
+}
+.goregister{
+  color: #000000;
+  background-color: #EFF4EE;
+  border-radius: 40rpx;
+  font-weight: normal;
+  font-size: 34rpx;
+  height: 100rpx!important;
+  line-height: 100rpx!important;
+  width: 100%!important;
+  margin-top: 40rpx;
+  padding: 0; 
+} 
+.footer{ 
+  margin-top: 100rpx;
+  padding: 0 20rpx;
+}
+.f-img{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.f-img text{
+  color: #414A61;
+  letter-spacing: 2rpx;
+}
+.f-img image{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 5rpx;
+}

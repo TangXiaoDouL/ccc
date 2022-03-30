@@ -1,0 +1,62 @@
+<view class="main">
+  <block wx:for="{{userAddressList}}" wx:key="index">
+
+    <view class="header">
+      <view class="header-top"
+          bindtap="onClickDefault"
+         data-addrid="{{item.AddrOId}}"
+         data-cityname="{{item.CityName}}"
+         data-address="{{item.DetailedAddress}}"
+         data-distriName="{{item.DistrictName}}"
+         data-mobile="{{item.Mobile}}"
+         data-proName="{{item.ProvinceName}}"
+         data-receiName="{{item.ReceiveName}}"
+       >
+            <!-- 收货人 -->
+      <view class="user">
+        <view class="userinfo">
+          <text class="iconfont icon-username"></text>
+          <text>收货人:</text>
+          <text>{{item.ReceiveName}}</text>
+        </view>
+        <view>{{item.Mobile}}</view>
+      </view>
+      <!-- 地址 -->
+      <view class="address">
+        <text>{{item.ProvinceName}}</text>
+        <text>{{item.CityName}}</text>
+        <text>{{item.DistrictName}}</text>
+        <text>{{item.Townname}}</text>
+        <text>{{item.DetailedAddress}}</text>
+      </view>
+      </view>
+      <!-- 操作 -->
+      <view class="bianji">
+        <!-- 单选按钮 -->
+        <view class="radio">
+          <radio-group bindtap="onClick" data-defaultid="{{item.IsDefault}}" data-addrid="{{item.AddrOId}}">
+            <radio checked="{{ d1.isCheck(item.IsDefault)}}"></radio>
+          </radio-group>
+          <text>默认地址</text>
+        </view>
+        <!-- 编辑 -->
+        <view class="redact-btn">
+          <view class="bianji-btn bianji-style" bindtap="onRedact" data-addressid="{{item.AddrOId}}">
+            <!-- <text class="iconfont icon-bianji "></text> -->
+            <text>编辑</text>
+          </view>
+          <view class="shanchu-btn bianji-style" bindtap="onDelete" data-addrid="{{item.AddrOId}}">
+            <!-- <text class="iconfont icon-shanchu"></text> -->
+            <text>删除</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!-- 新增 -->
+  <view class="newBtn">
+    <view class="newAddress" bindtap="goNewAddress">添加新地址</view>
+  </view>
+</view>
+<van-dialog id="van-dialog" />
+<wxs src="./address.wxs" module="d1"></wxs>

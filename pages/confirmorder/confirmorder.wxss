@@ -1,0 +1,228 @@
+.header{
+  display: flex;
+  height: 120rpx;
+  width: 100%;
+  background-color: #333333;
+}
+.deader-l{
+  flex: 1;
+  direction: flex;
+  flex-direction: column;
+  font-size: 30rpx;
+  color: white;
+} 
+.deader-l view:nth-child(1){ 
+  margin: 10rpx 20rpx;
+} 
+.mobile{  
+  margin-left: 50rpx!important;
+}
+.deader-l view:nth-child(2){
+  margin: 10rpx;
+}
+.deader-l view:nth-child(2) text{
+  margin: 0 10rpx;
+}
+.header-r{
+  width: 100rpx!important;
+  height: 100%; 
+  text-align: center;
+  font-size: 32rpx;
+  line-height: 120rpx;
+  background-color: #515151;
+}
+.noAddress{
+  margin-top: 40rpx!important;
+}
+.header-r text{
+  color: #E9F4F4;
+  font-size: 40rpx;
+  /* text-align: center; */
+}
+
+
+
+/* //订单项目 */
+/* 选择支付方式 */
+.pay {
+  border-bottom: 1px solid #f1f1f1;
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+}
+.payTitle {
+  line-height: 80rpx;
+  padding-left: 30rpx;
+  box-shadow: 0 10px 10px 0px #ccc;
+  color: #6E6E6E;
+}
+
+.payChose {
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
+.payChose .payItem {
+  display: flex;
+  width: 300rpx;
+  line-height: 100rpx;
+}
+
+.payChose .payItem .chosepay {
+  margin-left: 20rpx;
+  font-size: 32rpx;
+  color: #6e6e6e;
+  flex:1;
+  text-align: center;
+}
+
+.payChose .payItem .chosepay.payActive {
+  background-color: #6ac75e;
+  color: #fff;
+}
+
+.order{
+  padding: 40rpx;
+}
+.orderico {
+  padding-bottom: 10rpx;
+  border-bottom: 1px solid #D2D2D2;
+}
+.orderico text:nth-child(1) {
+  font-size: 40rpx;
+  color: #6E6E6E;
+  margin-right: 20rpx;
+}
+.orderico text:nth-child(2){
+  color: #06C1AE;
+}
+.goodslist{
+  position: relative;
+  margin: 20rpx 0;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #F4F4F4;
+  display: flex;
+}
+.goodsimg {
+  width: 200rpx;
+  height: 200rpx;
+
+}
+.goodsimg image{
+  width: 100%;
+  height: 100%;
+  border-radius: 8rpx;
+}
+.info{
+  display: flex;
+  flex-direction: column;
+}
+.info text:nth-child(1){
+  margin: 0rpx 40rpx;
+}
+.info text:nth-child(2){
+  margin: 40rpx;
+}
+.price{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  /* text-align: center; */
+  top: 123rpx;
+  right: 0rpx;
+}
+.price text:nth-child(2){
+  text-align: right;
+}
+.number{
+  margin-top: 40rpx;
+  /* text-align: right; */
+  display: flex;
+  /* align-items: right; */
+}
+.font-size{
+  font-size: 32rpx;
+  font-weight: 700;
+  color: red;
+}
+.number text:nth-child(1){
+  margin: 0 10rpx;
+}
+.liuyan{
+  margin-top: 10rpx;
+  width: 100%;
+  height: 240rpx;
+  background-color: #F8F8F8;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+.footer{
+  margin-top: 60rpx;
+  margin-bottom: 100rpx
+}
+.footer view{
+  font-size: 30rpx;
+  color: #808080;
+}
+.van-button--large{
+  width: 100%!important;
+}
+
+/* 返回顶部 */
+.fanhuitop {
+  height: 90rpx;
+  width: 90rpx;
+  position: fixed;
+  bottom: 176rpx;
+  right: 58rpx;
+  z-index: 1;
+}
+.detail{
+  width: 640rpx;
+  height: 80rpx;
+  overflow: hidden;
+  /* 文字超出使用。。。 */
+  text-overflow: ellipsis;
+  /* 强制一行 */
+  white-space: nowrap; 
+}
+.swiper-tab {
+  width: 100%;
+  /* border-bottom: 2rpx solid #ccc; */
+  /* text-align: center; */
+}
+
+.addresstext {
+  margin: 10rpx 35rpx;
+
+}
+
+.swiper-tab-item {
+  width: 100%;
+  color: #434343;
+}
+
+/* .active {
+  color: #F65959;
+  border-bottom: 4rpx solid #F65959;
+} */
+
+swiper {
+  text-align: center;
+}
+
+.tabtitle {
+  font-size: 32rpx;
+}
+
+.tabtop view {
+  color: #808080;
+}
+
+.tabtop {
+  padding: 10rpx 10rpx;
+  margin: 0 20rpx;
+
+}

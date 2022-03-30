@@ -1,0 +1,30 @@
+<!--components/todaysale/todaysale.wxml-->
+<view class="container">
+		<view class="sale-top">
+			{{netWeight}}Kg
+		</view>
+		<view class="sale-text">
+			销售量
+		</view>
+
+		<view class="sale-bottom">
+			<view class="bottom-item">
+				<view>
+					<text class="yellow">{{cnt||0}}</text>笔
+				</view>
+				<text>销售笔数</text>
+			</view>
+			<view class="bottom-item">
+				<view>
+					<text class="yellow">{{adtCnt}}</text>批次
+				</view>
+				<text>快检批次</text>
+			</view>
+			<view class="bottom-item">
+				<view>
+					<text class="yellow">{{hege?hege:0}}</text>%
+				</view>
+				<text>快检合格率</text>
+			</view>
+		</view>
+	</view>

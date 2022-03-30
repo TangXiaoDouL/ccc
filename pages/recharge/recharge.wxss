@@ -1,0 +1,201 @@
+.pay{
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+}
+.count{
+    height: 200rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url('https://img.ego360.cn/xcx_img/headbg.png') no-repeat;
+    background-size: 100% 100%;
+    box-shadow: -2rpx 2rpx 10rpx 5rpx #ccc;
+}
+.count-m{
+  height: 200rpx;
+  width: 100%;
+  padding: 0rpx 20rpx;
+  box-sizing: border-box;
+}
+.count view:nth-child(1){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30rpx;
+}
+.count view:first-child text{
+    position: relative;
+    color: #fff;
+    font-size:38rpx;
+    margin: 0 20rpx;
+}
+.count view:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30rpx;
+}
+.count view:nth-child(2) text{
+  font-size: 36rpx;
+  color: #fff;
+}
+.count view:nth-child(2) image{
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 8rpx;
+}
+.count view:nth-child(1) image{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+}
+/* 充值金额 */
+.monny-h{
+    font-size: 30rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    padding: 0 20rpx;
+    /* background-color: #F3F4F8; */
+    color: #000;
+}
+
+.appointent-date{
+      display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    align-content: center;
+}
+
+.btn{
+    margin: 10rpx;
+    text-align: center;
+    height: 140rpx;
+    width: 300rpx;
+    font-size: 35rpx;
+    display: flex;    
+    flex-direction: column;
+    border: 4rpx solid #CCCCCC;
+}
+.btn text{
+    margin: 10rpx 0;
+}
+.btn text:first-child{
+    color: #FF0000;
+}
+.btn text:last-child{
+    color: #666;
+}
+.click{
+    border: 4rpx solid skyblue!important;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAzUExURQAAAC6y1yqx1j642lzE4D242tbw9yew1iew1iew1sLp87Tj8Smx1qzh77rm8qff7sTp9CoGccgAAAAJdFJOUwD////////6U5UVgFIAAABVSURBVBjTbc5JDsAgDENRAp0+dLr/abuAKpFwlk9x4pSmOXZlKEMZylCGMpShDGUIO5ltuZltW3Er+Td872p5GJ612nI3wj2rbzfiD3vK6Bk6e3lhfEzJB33VUaYZAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+/* 支付方式 */
+.the-pay{
+    margin-top: 20rpx;
+    padding: 0 20rpx;
+    border-bottom: 1rpx solid #E5E5E5;
+    padding-bottom: 15rpx;
+}
+.pay-switch{
+    font-size: 30rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    padding: 0 20rpx;
+    color: #000;
+}
+.pay-item image{
+    margin-left: 30rpx;
+    width: 62rpx;
+    height: 62rpx;
+    
+}
+.pay-item view{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 389rpx;
+
+}
+.pay-item view text{
+    margin-left: 10rpx;
+font-size: 32rpx;
+color: #6C6C6C;
+
+}
+.pay-monny{
+    margin-top: 60rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 38rpx;
+    padding: 0 45rpx;
+    color: #333333;
+    text-align: center;
+}
+.pay-monny text{
+  font-weight: 400;
+}
+
+.pay-monny  text:last-child{
+    margin-left: 20rpx;
+    color: #EC5A5B;
+    font-weight: 700;
+}
+.queding{
+    margin-top: 50rpx;
+    padding: 0 40rpx;
+}
+.queding view{
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 22rpx;
+    background-color: #5472E2;
+}
+
+
+.appointent-date-div{
+    display:inline-block;
+    text-align: center;
+    width: 30%;
+    margin: 10rpx;
+    /* border: 4rpx solid skyblue!important;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAzUExURQAAAC6y1yqx1j642lzE4D242tbw9yew1iew1iew1sLp87Tj8Smx1qzh77rm8qff7sTp9CoGccgAAAAJdFJOUwD////////6U5UVgFIAAABVSURBVBjTbc5JDsAgDENRAp0+dLr/abuAKpFwlk9x4pSmOXZlKEMZylCGMpShDGUIO5ltuZltW3Er+Td872p5GJ612nI3wj2rbzfiD3vK6Bk6e3lhfEzJB33VUaYZAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    background-position: right bottom; */
+  }
+  .flex-item{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 166rpx;
+    font-size: 26rpx;
+    border:2rpx solid #999;
+    text-align: center;
+    border-radius: 10rpx;
+    color: #999;
+    cursor: pointer;
+    line-height: 30rpx;
+  }
+  .data_name{
+    font-size: 24rpx;
+    line-height: 54rpx;
+    color: #EC5A5B;
+  }
+  .active-tag .flex-item{
+    border: 4rpx solid skyblue!important;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAzUExURQAAAC6y1yqx1j642lzE4D242tbw9yew1iew1iew1sLp87Tj8Smx1qzh77rm8qff7sTp9CoGccgAAAAJdFJOUwD////////6U5UVgFIAAABVSURBVBjTbc5JDsAgDENRAp0+dLr/abuAKpFwlk9x4pSmOXZlKEMZylCGMpShDGUIO5ltuZltW3Er+Td872p5GJ612nI3wj2rbzfiD3vK6Bk6e3lhfEzJB33VUaYZAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+  }
+  .data_price{
+    font-size: 46rpx;
+    color: #413e3e;
+  }

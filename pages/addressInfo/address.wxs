@@ -1,0 +1,8 @@
+
+  var isCheck = function (d){
+   return d==0?false:true
+}
+
+  module.exports={
+    isCheck:isCheck
+  }

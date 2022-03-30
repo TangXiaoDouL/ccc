@@ -1,0 +1,44 @@
+<!-- 热点搜索 -->
+<view class="c">
+  <van-search 
+  value="{{ value }}" 
+  placeholder="请输入搜索关键词" 
+  use-action-slot 
+  bind:change="onKeyChange" 
+  bind:clear="onClear">
+    <view slot="action" bind:tap="onClick" class="seach">搜索</view>
+  </van-search>
+  <view hidden="{{seachGoods.length>0}}" class="main">
+    <view class="history">
+      <text>搜索历史</text>
+    </view>
+    <view class="history-content">
+      <block wx:for="{{kwworld}}" wx:key="index">
+        <text class="content" data-name="{{item}}" bind:tap="onClickKey" >{{item}}</text>
+      </block>
+    </view>
+    <view class="clearBtn" bind:tap="onRemove">
+      <view>清空历史记录</view>
+    </view>
+  </view>
+  <!-- 搜索 -->
+  <view class="seach">
+    <view class="hot">
+      <block wx:for="{{seachGoods}}" wx:key="index">
+        <view class="hotgoods" data-id="{{item.ReleaseOId}}"  data-sum="{{item.SumStock}}" data-status="{{item.StockStatus}}"  bind:tap="onClickGoodsItem">
+          <view class="imgStyle">
+            <image src="{{m1.imageUrl(item.Img)}}" />
+          </view>
+          <view class="hotgoods-item">
+            <view>{{item.cmdName}}</view>
+            <text>{{item.SellerName}}</text>
+            <text>￥{{item.Price}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+</view>
+
+<wxs module="m1" src="./img.wxs" ></wxs>

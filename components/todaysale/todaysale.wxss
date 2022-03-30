@@ -1,0 +1,66 @@
+/* components/todaysale/todaysale.wxss */
+.container {
+  background-color: #1882FC;
+  height: calc(100% - 20rpx);
+  padding-top: 20rpx;
+}
+
+
+.sale-top {
+  /* margin-top: 20rpx; */
+  width: 290rpx;
+  height: 290rpx;
+  line-height: 290rpx;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #01b0ff;
+  margin: 0 auto;
+  font-size: 40px;
+  color: yellow;
+  background-color: #45A5FC;
+}
+
+.sale-text {
+  color: #fff;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 200rpx;
+  margin: 0 auto;
+  font-size: 25px;
+}
+
+.sale-bottom {
+  color: #fff;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.bottom-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bottom-item view:nth-child(1) {
+  width: 180rpx;
+  height: 180rpx;
+  line-height: 180rpx;
+  border-radius: 50%;
+  margin: 0 auto;
+  border: 1px solid #01b0ff;
+  font-size: 18px;
+  text-align: center;
+}
+
+.bottom-item text:nth-child(2) {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 15rpx;
+}
+
+.yellow {
+  color: yellow;
+  font-size: 24px;
+}

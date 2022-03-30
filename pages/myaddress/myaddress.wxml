@@ -1,0 +1,1 @@
+<button open-type="openSetting" lang="zh_CN" bindgetuserinfo="getAddress">获取定位</button>

@@ -1,0 +1,431 @@
+
+
+.title {
+  position:  fixed;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  width: 100%;
+  background-color: #0058ed;
+  z-index: 300;
+  color: white; 
+  padding: 0 100rpx;
+  font-size: 32rpx;
+  border: 1rpx solid transparent;
+}
+::-webkit-scrollbar { 
+  display: none;  
+}   
+
+.title text {
+  position: relative;
+}
+
+.title text .icon { 
+  width: 0;
+  height: 0; 
+  position: absolute;
+  top: 19rpx; 
+  right: -12rpx;  
+  border-bottom: 19rpx solid #fff;
+  border-left: 26rpx solid transparent;
+}
+
+.notice {
+  display: flex;
+  position: fixed;
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 100%;
+  margin-top: 80rpx;
+  background-color: #fffbe8;
+  z-index: 400;
+  color: #3333;
+  font-size: 28rpx;
+  border: 1rpx solid transparent;
+}
+
+.notice text {
+  color: #ff9200;
+}
+
+.left {
+  float: left;
+  width: 230rpx;
+}
+
+.van-sidebar {
+  /* margin-top: 160rpx !important; */
+}
+
+.goodlist {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  /* margin-top: 80rpx; */
+}
+
+.catesName van-col {
+  text-align: center;
+}
+
+.catesName van-col text {
+  display: inline-block;
+  margin: 36rpx 0;
+}
+
+.catesName text {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.catesInfo image {
+  margin: 5rpx;
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.catesInfo view {
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.content {
+  padding: 0 20rpx;
+}
+
+.header {
+  height: 120rpx;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 120rpx;
+  color: orangered;
+}
+.goods{
+  height: 180rpx;
+  position: relative;
+
+}
+.goodsInfo {
+  position: relative;
+  display: flex;
+  height: 180rpx;
+  width: 100%;
+  border-bottom: 2rpx solid #F7F7F7;
+  margin: 10rpx 0;
+}
+
+.over{
+  position: absolute;
+  top: 0px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: .7;
+
+  z-index: 10;
+}
+.dis{
+  display: none;
+}
+
+/* .stop{
+  position: relative;
+} */
+.stop text{
+position: absolute;
+top: 50rpx;
+left: 70rpx;
+display: inline-block;
+padding: 10rpx 30rpx;
+opacity: .85;
+background-color: #000;
+border-radius: 20rpx;
+color: #fff;
+
+}
+
+.goodsItem{
+  margin-left: 13rpx;
+  padding: 20rpx 0;
+}
+.goodsItem view:nth-child(1){
+  font-size: 32rpx;
+}
+.goodsItem view:nth-child(2){
+  position: relative;
+  margin-top: 14rpx;
+  width: 96rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  color: #fff;
+  font-size: 20rpx;
+  text-align: center;
+  border-radius: 8rpx;
+  background-image: linear-gradient(to right,#07B63F, #6EB630);
+}
+.goodsItem view:nth-child(2)::before{
+  content: '';  
+  position: absolute;
+  top: 0rpx;
+  left: -10rpx;
+  width: 0;
+  height: 0;
+  border-top: 15rpx solid #07B63F;
+  border-left: 15rpx solid transparent; 
+}
+.goodsItem view:nth-child(3){
+  margin-top: 15rpx;
+  color: #fa3d41;
+  font-size: 34rpx;
+}
+
+
+
+
+.goodsInfo view:first-child image {
+  width: 140rpx;
+  height: 140rpx;
+  margin-top: 10rpx;
+  border-radius: 50%;
+}
+
+.goodsImg view view:nth-child(2) {
+  color: #999;
+}
+
+.goodsImg view view:nth-child(3) {
+  font-size: 40rpx;
+  margin-top: 20rpx;
+  color: #fd3f3f;
+}
+
+.goodsItemTitle {
+  font-size: 24rpx !important;
+}
+
+/* // picker样式 */
+
+.pickerClass {
+  border-top: 1rpx solid skyblue;
+  border-bottom: 1rpx solid skyblue;
+}
+
+.van-sidebar-item__text {
+  font-size: 32rpx;
+  text-align: center !important;
+  /* padding: 20px 20px 20px 8px; */
+}
+
+.van-sidebar-item {
+  padding: 20px 0 10px 10px !important;
+}
+
+/* 公告 */
+
+.swiper_container {
+  z-index: 500;
+  height: 60rpx;
+  width: 80vw;
+}
+
+.swiper_item {
+  font-size: 30rpx;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+
+.cart{
+  position: absolute;
+  top: 70rpx;
+  right: 34rpx;
+  width: 55rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #01d10b;
+}
+.cart text{
+  color: #fff;
+}
+/* 弹出框 */
+/* 弹出框 */
+.van-popup {
+  overflow-y: visible!important;
+}
+.popup{
+  position: relative;
+}
+.goodsImage{
+  position: absolute;
+  z-index: 600!important;
+  top: -45rpx;
+  left: 32rpx;
+  width: 160rpx;
+  height: 160rpx;
+}
+.goodsImage image{
+  width: 100%;
+  height: 100%;
+  border-radius: 30rpx;
+}
+.display{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 20rpx;
+left: 241rpx;
+}
+.display .carinfo1{
+  position: relative;
+  font-size: 32rpx;
+  color: #2D2D2D;
+  margin-top: 10rpx;
+}
+.display .carinfo1::after{
+content: '商家自营';
+position: absolute;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+top: -8rpx;
+right: -139rpx;
+margin-top: 14rpx;
+width: 96rpx;
+height: 34rpx;
+line-height: 34rpx;
+color: #fff;
+font-size: 20rpx;
+text-align: center;
+border-radius: 8rpx;
+background-image: linear-gradient(to right, #07b63f, #6eb630);
+}
+.display .carinfo2{
+  font-size: 32rpx;
+  margin-top: 10rpx;
+  color: #b9b5b5;
+}
+.display .carinfo3{
+  font-size: 44rpx;
+  margin-top: 10rpx;
+  color: #f53d3f;
+}
+.guige{
+  position: absolute;
+  width: 100%;
+  height: 130rpx;
+  top: 168rpx;
+  left: 40rpx;
+}
+.guige view:nth-child(1){
+  margin-bottom: 5rpx;
+}
+
+/* .guige view:nth-child(2){
+  margin-left: 42rpx;
+} */
+/* .guige view{
+  margin-top: 20rpx;
+  width: 160rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  color: #fff;
+  text-align: center;
+  background-color: #06C1AE;
+} */
+.number{
+  position: absolute;
+  top: 278rpx;
+  left: 42rpx;  
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+
+}
+
+.input,.jia,.jian{
+  width: 70rpx;
+  height: 70rpx;
+  color: red;
+}
+
+.van-button{
+  width: 274rpx!important;
+}
+.cla1{
+  border: 1rpx solid #01d10b!important;
+}
+.cateitem{
+  display: flex;
+}
+.cateitem {
+  display: inline-block;
+  padding: 15rpx 30rpx;
+  color: #333;
+  border: 1rpx solid #07B63F;
+  border-radius: 10rpx;
+  margin-left: 10rpx;
+ }
+.specClass{
+  background-color: #07B63F!important;
+  color: white!important;
+}
+
+

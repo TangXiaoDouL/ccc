@@ -1,0 +1,53 @@
+<!-- <view class="pay">
+  账户
+  <view class="count-m">
+      <view class="count">
+    <view>
+      <image lazy-load="{{true}}" src="/assets/image/defaulttouxiang.png" />
+      <text>{{userName}}</text>
+    </view>
+    <view>
+      <image lazy-load="{{true}}" src="/assets/image/monny-bag.png" />
+      <text>￥{{monny}}</text>
+    </view>
+  </view>
+  </view>
+  充值金额
+  <view class="monny-h">商家自营-充值金额</view>
+  <view class="monny">
+    <view class='appointent-date'>
+      <view class="appointent-date-div {{state==index?'active-tag':''}}" 
+      bindtap="select_date"
+      data-deid="{{item.AgeRuleDeId}}"
+      data-czmoney="{{item.MaxCnt}}"
+      data-zsmoney="{{item.FeeMoney}}"
+      wx:for="{{payList}}" 
+      data-key='{{index}}'>
+        <view class="flex-item">
+          <rich-text class='data_name' hidden="{{item.noMony}}" >赠送{{item.FeeMoney}}</rich-text>
+          <rich-text class="data_price">￥{{item.MaxCnt}}</rich-text>
+        </view>
+      </view>
+    </view>
+  </view>
+  支付方式
+  <view class="pay-switch">支付方式</view>
+  <view class="the-pay">
+    <radio-group bindchange="onClickChange">
+      <radio class="pay-item" checked="{{ischecked}}">
+        <view>
+          <image src="/assets/image/weixin.png" />
+          <text>微信支付</text>
+        </view>
+      </radio>
+    </radio-group>
+  </view>
+  应付金额
+  <view class="pay-monny">
+    <text>应付金额:</text>
+    <text>{{CZMoney}}元</text>
+  </view>
+  <view class="queding" bind:tap="onClickPayMoney">
+    <view>确认支付</view>
+  </view>
+</view> -->

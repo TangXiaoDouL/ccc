@@ -1,0 +1,47 @@
+.main{
+    width: 100%;
+    height: 100vh;
+    background-color: #F1F1F1;
+}
+.header{
+    padding: 20rpx;
+}
+.city{
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #666666;
+    background-color: #fff;
+    border-radius: 40rpx;
+}
+
+/* 开通城市 */
+.open-city{
+  padding: 20rpx;
+  background-color: #fff;
+}
+.city-title{
+  padding-bottom: 10rpx;
+  font-size: 30rpx;
+  color: #666666;
+  border-bottom: 1rpx solid #E9E9E9;
+}
+.open-city-name{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40rpx;
+}
+.open-city-name view{
+  width: 30%;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin: 10rpx 10rpx;
+  text-align: center;
+  /* background-color: green; */
+}
+.font-style{
+  color: #26CE95;
+  border: 1rpx solid #E9E9E9;
+  border-radius: 10rpx;
+}

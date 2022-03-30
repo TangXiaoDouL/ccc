@@ -1,0 +1,150 @@
+.header {
+  position: relative;
+  height: 260rpx;
+  width: 100%;
+  background: linear-gradient(#2B7AF8, #183DE1);
+}
+
+.register-img {
+  position: absolute;
+  top: 10rpx;
+  right: 0;
+  width: 250rpx;
+  height: 250rpx;
+}
+
+.register-form {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.register-panner {
+  position: absolute;
+  top: -20rpx;
+  left: 10;
+  z-index: 10;
+  width: 710rpx;
+  box-sizing: border-box;
+  box-shadow: 0rpx 3rpx 20rpx 10rpx #ccc;
+  background-color: white;
+  border-radius: 30rpx;
+  padding: 40rpx 40rpx 150rpx 40rpx;
+}
+
+.city {
+  height: 80rpx;
+  line-height: 80rpx;
+  border: 2rpx solid #D0D0D0;
+  padding: 0 10rpx;
+  margin: 40rpx 0rpx 50rpx 0rpx;
+  border-radius: 10rpx;
+  /* text-align: center; */
+  font-size: 30rpx;
+  color: #808080;
+}
+
+.city-name {
+  margin-left: 20rpx;
+  border-bottom: 1px dashed #ccc;
+}
+
+.bazaar {
+  height: 80rpx;
+  line-height: 80rpx;
+  border: 2rpx solid #D0D0D0;
+  padding: 0 10rpx;
+  border-radius: 10rpx;
+  margin-bottom: 50rpx;
+  font-size: 30rpx;
+  color: #808080;
+}
+
+.phone-input {
+  position: relative;
+}
+
+.phone {
+  position: absolute;
+  top: 28rpx;
+  left: 10rpx;
+  font-size: 32rpx;
+  color: #3C58DC;
+}
+
+.number {
+  height: 80rpx;
+  border: 2rpx solid #D0D0D0;
+  padding: 0 50rpx;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  margin-bottom: 25rpx;
+}
+
+
+.login {
+  height: 120rpx;
+  line-height: 120rpx;
+  width: 100% !important;
+  text-align: center;
+  color: white;
+  font-weight: normal;
+  font-size: 34rpx;
+  background-color: #2B7AF8;
+  border-radius: 40rpx;
+  margin-top: 100rpx;
+  box-shadow: 3rpx 0 -3rpx 0 #fff,
+              -3rpx 0 3rpx 0 #000,
+}
+
+.register {
+  margin-top: 10rpx;
+  height: 80rpx;
+  vertical-align: middle;
+  line-height: 80rpx;
+  color: #2B7AF8;
+  text-align: right;
+}
+
+.pickerClass {
+  border-top: 1rpx solid skyblue;
+  border-bottom: 1rpx solid skyblue;
+}
+
+.get-code {
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 250rpx !important;
+  border: 2rpx solid #D0D0D0;
+  text-align: center;
+  padding: 0!important;
+  /* margin: 0!important; */
+  color: white;
+  font-weight: normal;
+  font-size: 30rpx;
+  background-color: #0097A8;
+  border-radius: 20rpx;
+  margin-left: 10rpx!important;
+  box-shadow: 1rpx 1rpx 1rpx 1rpx #ccc;
+}
+
+.yanzhengma {
+  display: flex;
+}
+
+
+.yanzhengma input {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  border: 2rpx solid #D0D0D0;
+  padding: 0 10rpx;
+  border-radius: 10rpx;
+  margin-bottom: 50rpx;
+  font-size: 30rpx;
+  color: #808080;
+
+}

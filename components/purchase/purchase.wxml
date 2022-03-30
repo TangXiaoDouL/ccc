@@ -1,0 +1,12 @@
+<!--components/purchase/purchase.wxml-->
+<view>
+		<view class="purchase-list">
+			<view class="purchase-item" wx:for="{{itemData}}" wx:key="index">
+				<view class="item-title">
+					<!-- <text>{{item.CdName}}</text> -->
+					<!-- <text>{{item.AddTime}}</text> -->
+				</view>
+				<image bindtap="seeBig" data-img="{{item.SeedImg}}" src="{{item.SeedImg}}" mode=""></image>
+			</view>
+		</view>
+	</view>

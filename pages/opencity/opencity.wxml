@@ -1,0 +1,18 @@
+<view class="main" >
+      
+    <view class="open-city" >
+        <view class="city-title" >选择开通城市</view>
+
+        <view class="open-city-name" >
+              <block  wx:for="{{opencityList}}" wx:key="index">
+                  <view 
+                   class="font-style"
+                   bindtap="onClickCity"
+                   data-AgeOId="{{item.AgeOId}}"
+                   data-CityName="{{item.CityName}}"
+                   >{{item.CityName}}</view>
+              </block>
+        </view>
+
+    </view>
+</view>

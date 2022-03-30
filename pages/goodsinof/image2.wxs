@@ -1,0 +1,11 @@
+
+  var imageUrl = function (imgUrl){
+    var http='https://img.ego360.cn/'
+    var image=http+imgUrl
+
+    return image
+}
+
+  module.exports={
+    imageUrl:imageUrl
+  }

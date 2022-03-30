@@ -1,0 +1,105 @@
+<view class="main">
+  <view class="header">
+    <!-- 市场 -->
+    <view class="h-title">
+      <view class="box2">
+        <text class="iconfont  icon-icon_location iconaddress"></text>
+        <view class="title" >
+        <view wx:if="{{nologin}}">
+          尚未登录
+        </view>
+          <text bindtap="onClick" wx:else>{{AgencyName?AgencyName:"尚未登录"}}</text>
+        </view>
+      </view>
+      <view class="record" bind:tap="onClickSeach">
+        <text class="iconfont icon-fangdajing"></text>
+        <text>搜索</text>
+      </view>
+    </view>
+    <!-- 公告信息 -->
+    <view class="notice">
+      <text class="iconfont icon-laba1 iconstyle"></text>
+      <swiper class="swiper_container " vertical="true" autoplay="true" circular="true" interval="2000">
+        <block wx:for="{{getTitleInfoList}}" wx:key="index">
+          <swiper-item>
+            <view class="swiper_item">{{item.Content}}</view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <view class="mainswiper">
+    <swiper class="swiper" circular indicator-dots interval="{{3000}}" autoplay="true">
+      <swiper-item wx:for="{{swiperInfo}}" wx:key="index">
+        <image lazy-load="{{true}}" src="{{item.img}}" />
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 标题 -->
+  <view class="title-name">
+    <view>
+      <image src="/assets/image/item1.png"></image>
+      <text>人工优选</text>
+    </view>
+    <view>
+      <image src="/assets/image/item2.png"></image>
+      <text>品质保证</text>
+    </view>
+    <view>
+      <image src="/assets/image/item3.png"></image>
+      <text>售后无忧</text>
+    </view>
+  </view>
+  <!-- 分类 -->
+  <view class="box">
+    <block wx:for="{{cateList}}" wx:key="index">
+        <view class="goodsCate" bind:tap="onClickCate2" data-id="{{index}}">
+          <image lazy-load="{{true}}" src="{{item.img}}" />
+          <text>{{item.title}}</text>
+        </view>
+        <!-- <view class="zy">自营</view> -->
+    </block>
+  </view>
+  <!-- 热销 -->
+  <view class="rexiao">
+    <image lazy-load="{{true}}" src="/assets/image/hot.png" />
+    <text>热销产品</text>
+
+  </view>
+  <!-- 热销商品 -->
+  <view class="hot">
+    <block wx:for="{{hotGoodsList}}" wx:key="index">
+      <view class="hotgoods" bind:tap="onClickHot" data-id="{{item.ReleaseOId}}" data-sum="{{item.SumStock}}" data-status="{{item.StockStatus}}">
+        <view>
+          <image lazy-load="{{true}}" src="{{m1.imageUrl(item.Img)}}" />
+        </view>
+        <view class="hotgoods-item">
+          <view>{{item.cmdName}}</view>
+          <text class="shanghu" wx:if="{{nologin==true}}">商家自营</text>
+          <text wx:else>{{item.SellerName}}</text>
+          <text>￥{{item.Price}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+
+<!-- 弹出层 -->
+<van-popup show="{{ showDilog }}" position="bottom" custom-style="height: 40%;" bind:close="onClose">
+  <van-picker show-toolbar columns="{{ columns }}" bind:cancel="quxiao" bind:confirm="queding" bind:change="selectChange" active-class="pickerClass" />
+</van-popup>
+
+<view class="layer" wx:if="{{firstShow}}">
+  <!-- <image src="/assets/image/good1.jpg"></image> -->
+  <view class="total">
+    <view>商城公告</view>
+    <view>
+      <block wx:for="{{totalinfo}}" wx:key="index">
+        <text>{{item.DSBanner}}</text>
+      </block>
+    </view>
+    <view class="know" bind:tap="onClickKnow">我知道了</view>
+  </view>
+</view>
+<wxs src="./image.wxs" module="m1"></wxs>

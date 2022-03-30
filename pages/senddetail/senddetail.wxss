@@ -1,0 +1,118 @@
+.main{
+    width: 100vw;
+    height: 100vh;
+    background-color: #F6F6F6;
+    border-top: 1rpx solid transparent;
+}
+.header{
+    position: fixed;
+    width: 100%;
+    height: 132rpx;
+    line-height: 132rpx;
+    border-top: 1rpx solid transparent;
+    padding: 0 40rpx;
+    z-index: 100;
+    background-color: #F6F6F6;
+
+}
+.title{
+    display: flex;
+    /* position: relative; */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 80rpx;
+    width: 100%;
+    margin-top: 26rpx;
+    border-radius: 30rpx;
+    color: #2373B4;
+    background-color: #F6F6F6;
+    border: 1rpx solid #648EB1;
+}
+.title view{
+    flex: 1;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-right: 1rpx solid #648EB1;
+    text-align: center;
+}
+.clickStyle{
+    background-color: #1169B0;
+    color: #fff;
+}
+.data{
+    margin-top: 132rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40rpx;
+    height: 100rpx;
+    background-color: #fff;
+}
+.data view:first-child{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.data view:first-child image{
+    width: 56rpx;
+    height: 56rpx;
+}
+.data view:last-child{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.data view:last-child image{
+    width: 48rpx;
+    height: 48rpx;
+}
+.data text{
+    height: 56rpx;
+    line-height: 56rpx;
+}
+.fontstyle{
+    color: #FF0000;
+}
+.content{
+    padding: 20rpx 20rpx;
+}
+.order{
+    margin: 15rpx 0;
+    height: 200rpx;
+    border-radius: 15rpx;
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+.order-title{
+    height: 100rpx;
+    line-height: 100rpx;
+    padding-left: 20rpx;
+    text-align: left;
+    font-size: 36rpx;
+    background-color: #2BA7FD;
+    color: #fff;
+}
+.info{
+    position: relative;
+    height: 100rpx;
+    line-height: 100rpx;
+    padding:0 20rpx;
+}
+.info text:nth-child(1){
+    margin-right: 100rpx;
+}
+
+.info text:nth-child(3){
+    position: absolute;
+    top: 0;
+    left: 450rpx;
+}
+.info text:nth-child(2){
+    margin-left: 100rpx;
+    color: #FF2031;
+}
+.nodata{
+  margin-top: 137rpx;
+  text-align: center;
+}

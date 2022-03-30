@@ -1,0 +1,152 @@
+<view class="page-body">
+  <view class="page-section tc" wx:if="{{showVideo}}">
+    <live-player id="player" src="{{url}}" mode="live" autoplay="true" bindstatechange="statechange" binderror="error" >
+       <cover-view class="full">  
+          <cover-view class="full-all" bindtap="clickFull">
+            <cover-image src="/assets/image/full.png"></cover-image>
+          </cover-view>
+       </cover-view>
+    </live-player>
+  </view>
+</view>
+<view class="main">
+<!-- 搜索框 -->
+<!-- 搜索列表 -->
+<view class="list">
+  <!-- 左侧 -->
+    
+  <scroll-view custom-class="font-size" class="left" scroll-y="true" style="height:{{height}}px;">
+    <van-sidebar bind:change="onChangeClick">
+      <van-sidebar-item 
+      class="sidebar-style"
+      wx:for="{{goodsCateList}}" 
+      wx:key="index" 
+      title="{{m1.fontReaplace(item.ClsTypeName)}}" 
+      data-id="{{item.ClsTypeOId}}">
+      </van-sidebar-item>
+    </van-sidebar>
+  </scroll-view>
+
+  <!-- 右侧 -->
+    <scroll-view scroll-y="true" style="height:{{height}}px;background-color:#fff;" bindscrolltolower="onScrollTolower">
+    <view class="content">
+      <view >
+        <view class="sort">
+            <view class="sort-item">
+                <view class="{{OrderBy==0?'selectItem':''}}" data-id="0" bindtap="onClickSortItem">
+                  默认排序
+                </view>
+                <view class="sort-price" data-id="1" bindtap="onClickPriceItem">
+                    <text class="iconStyle2 {{OrderBy==2?'iconStyle3':''}}"></text>
+                    <text class="{{OrderBy==2 || OrderBy==1 ?'iconStyle4':''}}">按价格</text>
+                    <text class="iconStyle2 {{OrderBy==1?'iconStyle3':''}}" ></text>
+                </view>
+                <view class="sort-sales" bindtap="onClickSalesItem" >
+                    <text class="iconStyle5 {{OrderBy==3?'iconStyle3':''}}"></text>
+                    <text class="{{OrderBy==3 || OrderBy==4 ?'iconStyle4':''}}">按销量</text>
+                    <text class="iconStyle5 {{OrderBy==4?'iconStyle3':''}}"></text>
+                </view>
+            </view>
+
+        </view>
+
+        <block wx:for="{{goodsInfoList}}" wx:key="index">
+            <view class="goods" >
+                <view>
+                <view   class="goodsInfo" catch:tap="goGoodsInfo" data-id="{{item.ReleaseOId}}" data-sum="{{item.SumStock}}" data-status="{{item.StockStatus}}" >
+                    <view  >
+                    <image lazy-load="{{true}}" src="{{m1.imageUrl(item.Img)}}" />
+                </view>
+                <view class="goodsItem" >
+                    <view >{{item.cmdName}}</view>
+                    <view  wx:if="{{nologin==true}}" >商家自营</view>
+                    <view wx:else >{{item.SellerName}}</view>
+                    <view >￥{{item.Price}}</view>
+                </view>
+                <view 
+                class="cart"  
+                catch:tap="onClickCart"
+                data-img="{{item.Img}}"
+                data-name="{{item.cmdName}}"
+                data-price="{{item.Price}}"
+                data-sellername="{{item.SellerName}}"
+                data-selleroid="{{item.SellerOId}}"
+                data-sumstok="{{item.SumStock}}"
+                data-id="{{item.ReleaseOId}}"
+                data-stockstatus="{{item.StockStatus}}"
+                data-cmdoid="{{item.CmdOId}}"
+                >
+                    <text class="addicon" >+</text>
+                </view>
+                </view>
+             <!-- 卖光了 -->
+          <view class="stop {{item.flag==true?'over':'dis'}}" >
+                <text>卖光了</text>
+          </view>
+          </view>
+
+          </view>
+        </block>
+      </view>
+    </view>
+  </scroll-view>
+  
+</view>
+
+</view>
+
+
+<!-- 弹出框 -->
+<van-popup show="{{ show }}" position="bottom" custom-style="height: 50%;" bind:close="onClose" closeable class="popup">
+  <!-- 图片 -->
+  <view class="goodsImage">
+    <image lazy-load="{{true}}" src="{{m1.imageUrl(cartImage)}}" />
+  </view>
+  <!-- 描述 -->
+  <view class="display">
+    <text class="carinfo1" >{{cartName}}</text>
+    <text class="carinfo2"  wx:if="{{showStatus}}">库存: {{sumstock}}</text>
+    <text class="carinfo3"  >￥{{goodsprice}}</text>
+  </view>
+  <!-- 规格 -->
+  <view class="guige">
+    <view>规格分类</view>
+    <block  wx:for="{{specList}}" wx:key="index"  >
+        <view
+        class="cateitem {{item.BindSpecsOId==BindSpecsOId ? 'specClass' : ''}}" 
+        bind:tap="onClickSpecname"
+        data-name="{{item.SpecName}}" 
+        data-id="{{item.BindSpecsOId}}"
+        data-item ="{{item}}"
+        >
+        {{item.SpecName}}</view>
+    </block>
+  </view>
+  <!-- 购买数量 -->
+  <view class="number">
+    <text>购买数量</text>
+    <van-stepper 
+    disable-input
+    custom-class="stepper" 
+    input-width="150rpx" 
+    input-class="cla1"  
+    plus-class="cla1"
+    minus-class="cla1"
+    button-size="60rpx" 
+    value="{{ Goods_Number }}" 
+    bind:change="onChange"
+    bind:plus="onChangeAdd"
+     />
+  </view>
+  <van-goods-action>
+    <van-goods-action-icon icon="goods-collect-o" open-type='share' text="分享" bind:click="onShareAppMessage" ></van-goods-action-icon>
+    <van-goods-action-icon icon="cart-o" text="购物车" bind:click="onClickIcon" />
+    <van-goods-action-button text="加入购物车" type="warning" data-type="{{1}}" bind:click="onClickBtnCart" />
+    <van-goods-action-button text="立即购买" data-type="{{2}}" bind:click="onClickBtnCart" />
+  </van-goods-action>
+</van-popup>
+
+
+
+<!-- 导入wxs -->
+<wxs src="./image.wxs" module="m1"></wxs>

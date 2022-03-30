@@ -1,0 +1,58 @@
+    
+  <view  wx:if="{{iscartNull}}" class="cartNull">
+        <view class="order" >
+            <image src="/assets/image/orderNull.png"/>
+            <text >您的购物车是空的...</text>
+            <view class="gotoshop" bindtap="gotoShop">去逛逛</view>
+        </view>
+    </view>
+
+<view wx:else class='cartallview'>
+  <view class="cart-box" wx:for="{{cartsdata}}" wx:key="{{index}}" wx:for-index="idx">
+    <!-- wx:for 购物车信息列表 头部商家名称 -->
+    <view class='storehed'>
+      <icon type="{{item.selected ? 'success':'circle'}}" bindtap="storeselected" data-index="{{idx}}" />
+      <text>{{item.sellername}}</text>
+    </view>
+    <!-- goodslist -->
+    <view>
+      <!-- 商品组键 -->
+      <view class='shopgoodlist' wx:for="{{item.goodsinfo}}" wx:key="{{index}}">
+        <!-- wx:if 是否选择显示不同图标 -->
+        <icon type="{{item.selected ? 'success':'circle'}}" bindtap="goodsselected" data-index="{{index}}" data-select-index="{{idx}}" />
+        <!-- 点击商品图片可跳转到商品详情 -->
+
+       <image lazy-load="{{true}}" class="shopgoodlistimg" wx:if="{{m1.imglength(item.img)}}" src="/assets/image/nopic.png" />
+            <image lazy-load="{{true}}" class="shopgoodlistimg" wx:else src="{{m1.imageUrl(item.img)}}" />
+
+        <view class='goodsdata'>
+
+          <text class='goodsname'>{{item.cmdname}}</text>
+          <text class='specification'>{{item.specname}}</text>
+          <text class='price'>￥{{item.price}}</text>
+           <image src='/assets/image/del.png' class='delimg' data-index="{{index}}" data-select-index="{{idx}}" bindtap='delCart'></image>
+          <!-- 增加减少数量按钮 -->
+          <view class='goodsnum'>
+            <text bindtap="minusCount" data-index="{{index}}" data-select-index="{{idx}}" >-</text>
+            <text>{{item.num}}</text>
+            <text bindtap="addCount" data-index="{{index}}" data-select-index="{{idx}}" >+</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 合计 提交订单 -->
+
+<view class='allselected'>
+  <view>
+    <icon type="{{allselected ? 'success':'circle'}}" bindtap="tapallallprices" />
+    <text>已选（{{allnum}}）</text>
+  </view>
+  <view>
+    <text class='allprices'>￥{{allprices}}</text>
+    <label class='placeanorder' bindtap='btn_submit_order'>下单</label>
+  </view>
+</view>
+
+<wxs src="./image.wxs" module="m1"></wxs>

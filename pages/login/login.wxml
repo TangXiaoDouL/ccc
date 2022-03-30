@@ -1,0 +1,17 @@
+<view class="login-img">
+  <image mode="widthFix" lazy-load="{{true}}" src="/assets/image/sxhmlogin.png"></image>
+  <image class="logo" mode="widthFix" lazy-load="{{true}}" src="/assets/image/logo.jpg"></image>
+</view>
+<view class="login-form">
+  <view class="login-panner">
+    <!-- <view class="login-title">
+      <text class="denglu">登录</text>
+    </view> -->
+    <button class="goregister" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber2">
+      去注册
+    </button>
+    <button class="login" size="default" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+      微信登录
+    </button>
+  </view>
+</view>

@@ -1,0 +1,43 @@
+<!--components/insrec/insrec.wxml-->
+<view>
+		<view class="inspect-list">
+			<view class="inspect-item" wx:for="{{itemData}}" wx:key="index">
+				<view class="item-left">
+					<view>
+						<image src="../../static/image/chkwhite.png" mode=""></image>
+						<text class="marginright">序号：{{index+1}}</text>
+						<text>商户：{{item.ChkSellerName}}</text>
+					</view>
+					<view>
+						<text>检查人员：{{item.ChkOpName}}</text>
+					</view>
+					<view>
+						检查时间：{{item.ChkTime}}
+					</view>
+					<view>
+						问题描述：{{item.ChkWTDes}}
+					</view>
+				</view>
+				<view class="item-right">
+					<view v-if="item.ChkWTStatus">
+						<text>正常</text>
+						<image src="../../static/image/zcwhite.png" style="background-color: #57A92D;"></image>
+					</view>
+					
+					<view v-else>
+						<text>异常</text>
+						<image src="../../static/image/ycwhite.png"></image>
+					</view>
+					
+				</view>
+
+				<view class="item-bottom">
+					<view>
+						<text style="margin-right: 15rpx;">已签到</text>
+						<text>签到人员：{{item.ChkOpName}}</text>
+					</view>
+					<view>签到时间：{{item.ChkTime}}</view>
+				</view>
+			</view>
+		</view>
+	</view>

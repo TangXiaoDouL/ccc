@@ -1,0 +1,10 @@
+/* components/mainBody/mainBody.wxss */
+.container {
+  width: 100%;
+}
+
+.container image {
+  /* width: 100%; */
+  margin: 0 auto;
+  display: block;
+}

@@ -1,0 +1,240 @@
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="全部">
+  <!-- 暂无订单 -->
+    <view  wx:if="{{iscartNull}}" class="cartNull">
+        <view class="order" >
+            <image src="/assets/image/orderNull.png"/>
+            <text >暂无订单信息...</text>
+        </view>
+    </view> 
+    <view wx:else class="content">
+      <block wx:for="{{payOrderList}}" wx:key="index">
+        <!-- 标题 -->
+        <view class="c-title">
+          <view>
+            <text class="iconfont icon-dianpu-copy"></text>
+            <text class="SellerName">{{item.SellerName}}</text>
+          </view>
+          <text>订单:{{item.OrderNo}}</text>
+        </view>
+        <!-- 内容 -->
+        <block wx:for="{{item.order}}" wx:key="index">
+          <view class="c-goods">
+            <view>
+              <image lazy-load="{{true}}" wx:if="{{m1.imglength(item.Img)}}" src="/assets/image/nopic.png" />
+              <image lazy-load="{{true}}" wx:else src="{{m1.imageUrl(item.Img)}}" />
+            </view>
+            <view class="c-goodsinfo">
+              <view>{{item.cmdName}}</view>
+              <view>{{item.SpecName}}</view>
+            </view>
+            <view class="price">
+              <text>￥{{item.Shop_Price}}</text>
+              <text>x{{item.Goods_Number}}</text>
+            </view>
+          </view>
+        </block>
+        <!-- footer -->
+        <view class="footer">
+          <view>{{item.Order_Time}}</view>
+          <view wx:if="{{item.Pay_Id==2}}">
+            <image lazy-load="{{true}}" src="/assets/image/weixin.png" />
+            <text>微信</text>
+          </view>
+          <view>
+            <text>实付:</text>
+            <text class="monny">￥{{m1.allMonny(item.Order_Amount)}}</text>
+          </view>
+        </view>
+        <!-- 按钮 -->
+        <view class="btn">
+          <view wx:if="{{item.Order_Status==1}}" class="btn222">
+            <view class="quxiao1" data-day="{{item.Day}}" data-order="{{item.OrderNo}}" bindtap="onQuxiao">
+              取消订单
+            </view>
+            <view class="await1" bindtap="onAwaitPay" data-day="{{item.Day}}" data-orderid="{{item.OrderRdOId}}" data-paymentId="{{item.PaymentId}}">
+              待付款
+            </view>
+          </view>
+          <view wx:elif="{{item.Order_Status==2}}" class="await3">待收货</view>
+          <view wx:elif="{{item.Order_Status==4}}" class="finish3">已完成</view>
+          <view wx:elif="{{item.Order_Status==7}}" class="finish3">交易关闭</view>
+        </view>
+      </block>
+    </view>
+  </van-tab>
+  <van-tab title="待付款">
+    <!-- 暂无订单 -->
+    <view  wx:if="{{iscartNull}}" class="cartNull">
+        <view class="order" >
+            <image src="/assets/image/orderNull.png"/>
+            <text >暂无订单信息...</text>
+        </view>
+    </view>
+
+    <view wx:else class="content">
+      <block wx:for="{{payOrderList}}" wx:key="index">
+        <!-- 标题 -->
+        <view class="c-title">
+          <view>
+            <text class="iconfont icon-dianpu-copy"></text>
+            <text class="SellerName">{{item.SellerName}}</text>
+          </view>
+          <text>订单:{{item.OrderNo}}</text>
+        </view>
+        <!-- 内容 -->
+        <block wx:for="{{item.order}}" wx:key="index">
+          <view class="c-goods">
+            <view>
+              <image lazy-load="{{true}}" wx:if="{{m1.imglength(item.Img)}}" src="/assets/image/nopic.png" />
+              <image lazy-load="{{true}}" wx:else src="{{m1.imageUrl(item.Img)}}" />
+            </view>
+            <view class="c-goodsinfo">
+              <view>{{item.cmdName}}</view>
+              <view>{{item.SpecName}}</view>
+            </view>
+            <view class="price">
+              <text>￥{{item.Goods_Price}}</text>
+              <text>x{{item.Goods_Number}}</text>
+            </view>
+          </view>
+        </block>
+         <!-- footer -->
+          <view class="footer">
+            <view>{{item.Order_Time}}</view>
+            <view wx:if="{{item.Pay_Id==2}}">
+              <image lazy-load="{{true}}" src="/assets/image/weixin.png" />
+              <text>微信</text>
+            </view>
+            <view>
+              <text>实付:</text>
+              <text class="monny">￥{{m1.allMonny(item.Order_Amount)}}</text>
+            </view>
+          </view>
+        <!-- 按钮 -->
+        <view class="btn">
+          <view wx:if="{{item.Day===0}}" class="quxiao2" data-day="{{item.Day}}" data-order="{{item.OrderNo}}" bindtap="onQuxiao">
+            取消订单
+          </view>
+          <view class="awaitpay2" bindtap="onAwaitPay" data-day="{{item.Day}}" data-orderid="{{item.OrderRdOId}}" data-paymentId="{{item.PaymentId}}">
+            待付款
+          </view>
+        </view>
+      </block>
+    </view>
+  </van-tab>
+  <van-tab title="待收货">
+    <!-- 暂无订单 -->
+    <view  wx:if="{{iscartNull}}" class="cartNull">
+        <view class="order" >
+            <image src="/assets/image/orderNull.png"/>
+            <text >暂无订单信息...</text>
+        </view>
+    </view>
+
+    <view wx:else class="content">
+      <block wx:for="{{payOrderList}}" wx:key="index">
+        <!-- 标题 -->
+        <view class="c-title">
+          <view>
+            <text class="iconfont icon-dianpu-copy"></text>
+            <text class="SellerName">{{item.SellerName}}</text>
+          </view>
+          <text>订单:{{item.OrderNo}}</text>
+        </view>
+        <!-- 内容 -->
+        <block wx:for="{{item.order}}" wx:key="index">
+              <view class="c-goods">
+          <view>
+            <image lazy-load="{{true}}" wx:if="{{m1.imglength(item.Img)}}" src="/assets/image/nopic.png" />
+            <image lazy-load="{{true}}" wx:else src="{{m1.imageUrl(item.Img)}}" />
+          </view>
+          <view class="c-goodsinfo">
+            <view>{{item.cmdName}}</view>
+            <view>{{item.SpecName}}</view>
+          </view>
+          <view class="price">
+            <text>￥{{item.Goods_Price}}</text>
+            <text>x{{item.Goods_Number}}</text>
+          </view>
+        </view> 
+        </block>
+        <!-- footer -->
+        <view class="footer">
+          <view>{{item.Order_Time}}</view>
+          <view wx:if="{{item.Pay_Id==2}}">
+            <image lazy-load="{{true}}" src="/assets/image/weixin.png" />
+            <text>微信</text>
+          </view>
+          <view>
+            <text>实付:</text>
+            <text class="monny">￥{{m1.allMonny(item.Order_Amount)}}</text>
+          </view>
+        </view>
+        <!-- 按钮 -->
+        <view class="btn">
+          <view wx:if="{{item.Order_Status==2}}" class="await3">待发货</view>
+          <view wx:if="{{item.Order_Status==3}}" class="finish3">已发货</view>
+        </view>
+      </block>
+    </view>
+  </van-tab>
+  <van-tab title="已完成">
+    <!-- 暂无订单 -->
+    <view  wx:if="{{iscartNull}}" class="cartNull">
+        <view class="order" >
+            <image src="/assets/image/orderNull.png"/>
+            <text >暂无订单信息...</text>
+        </view>
+    </view>
+    <view wx:else  class="content">
+      <block wx:for="{{payOrderList}}" wx:key="index">
+        <!-- 标题 -->
+        <view class="c-title">
+          <view>
+            <text class="iconfont icon-dianpu-copy"></text>
+            <text class="SellerName">{{item.SellerName}}</text>
+          </view>
+          <text>订单:{{item.OrderNo}}</text>
+        </view>
+        <!-- 内容 -->
+        <block wx:for="{{item.order}}" wx:key="index">
+              <view class="c-goods">
+          <view>
+            <image lazy-load="{{true}}" wx:if="{{m1.imglength(item.Img)}}" src="/assets/image/nopic.png" />
+            <image lazy-load="{{true}}" wx:else src="{{m1.imageUrl(item.Img)}}" />
+          </view>
+          <view class="c-goodsinfo">
+            <view>{{item.cmdName}}</view>
+            <view>{{item.SpecName}}</view>
+          </view>
+          <view class="price">
+            <text>￥{{item.Goods_Price}}</text>
+            <text>x{{item.Goods_Number}}</text>
+          </view>
+        </view>
+        </block>
+        <!-- footer -->
+        <view class="footer">
+          <view>{{item.Order_Time}}</view>
+          <view wx:if="{{item.Pay_Id==2}}">
+            <image lazy-load="{{true}}" src="/assets/image/weixin.png" />
+            <text>微信</text>
+          </view>
+          <view>
+            <text>实付:</text>
+            <text class="monny">￥{{m1.allMonny(item.Order_Amount)}}</text>
+          </view>
+        </view>
+        <!-- 按钮 -->
+        <view class="btn">
+          <view wx:if="{{item.Order_Status==4}}" class="finish3">已完成</view>
+        </view>
+      </block>
+    </view>
+  </van-tab>
+  <!-- 返回顶部 -->
+  <image lazy-load="{{true}}" bindtap="top0" wx:if="{{isShow}}" class='fanhuitop' src='/assets/image/fantop.png'></image>
+</van-tabs>
+<van-dialog id="van-dialog" />
+<wxs src="./image.wxs" module="m1"></wxs>

@@ -1,0 +1,184 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "pages/tab/cart/cart",
+          "pathName": "pages/tab/cart/cart",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/register/register",
+          "pathName": "pages/register/register",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/tab/home/home",
+          "pathName": "pages/tab/home/home",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/seach/seach",
+          "pathName": "pages/seach/seach",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/tab/order/order",
+          "pathName": "pages/tab/order/order",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/newaddress/newaddress",
+          "pathName": "pages/newaddress/newaddress",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/shopdetails/shopdetails",
+          "pathName": "pages/shopdetails/shopdetails",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/shop/shop",
+          "pathName": "pages/shop/shop",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/tab/categerte/categerte",
+          "pathName": "pages/tab/categerte/categerte",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/opencity/opencity",
+          "pathName": "pages/opencity/opencity",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/opencity/opencity",
+          "pathName": "pages/opencity/opencity",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/opencity/opencity",
+          "pathName": "pages/opencity/opencity",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/opencity/opencity",
+          "pathName": "pages/opencity/opencity",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/tab/order/order",
+          "pathName": "pages/tab/order/order",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/register/register",
+          "pathName": "pages/register/register",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/tab/me/me",
+          "pathName": "pages/tab/me/me",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/tab/me/me",
+          "pathName": "pages/tab/me/me",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/tab/me/me",
+          "pathName": "pages/tab/me/me",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/tab/categerte/categerte",
+          "pathName": "pages/tab/categerte/categerte",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/shopsdetail/shopsdetail",
+          "pathName": "pages/shopsdetail/shopsdetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/addressInfo/addressInfo",
+          "pathName": "pages/addressInfo/addressInfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/confirmorder/confirmorder",
+          "pathName": "pages/confirmorder/confirmorder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "suyuan",
+          "pathName": "pages/suyuan/suyuan",
+          "query": "",
+          "scene": null,
+          "launchMode": "default"
+        }
+      ]
+    }
+  }
+}

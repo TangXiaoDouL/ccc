@@ -1,0 +1,41 @@
+<view class="main">
+  <view class="header">
+    <view class="myAddress">
+           <!-- 收货人 -->
+    <view class="addresUser userInfo">
+      <text><text class="master">*</text>收货人:</text>
+      <input class="userinput" value="{{userName}}" bindinput="inputUserName"  />
+    </view>
+    <!-- //联系电话 -->
+    <view class="iphoneNumber userInfo">
+      <text><text class="master">*</text>联系电话:</text>
+      <input class="userinput" value="{{phone}}" bindblur="blurPhone" bindinput="inputPhone"  />
+    </view>
+    <!-- 所在地区 -->
+    <view class="address userInfo">
+        <text ><text class="master">*</text>所在地区</text>
+        <button bindtap="handleChooseAddress" class="hanldeInfo"   >{{address}}</button>
+    </view>
+    <!-- 详细地址 -->
+    <view class="addressinfo">
+          <input class="addressInput" bindinput="inpuAddress"  value="{{detailAddress}}" placeholder="请填写详细地址" />
+    </view>      
+    </view>
+      
+    <!-- 默认 -->
+    <view class="default">
+        <text >设为默认</text>
+        <switch checked="{{isCheck}}"  bindchange="switch1Change"  />
+    </view>
+
+    <view class="save" bindtap="updataAddress">
+          <view>
+              修改
+          </view>
+            
+    </view>
+
+
+      
+  </view>
+</view>

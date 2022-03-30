@@ -1,0 +1,4 @@
+<!--components/mainBody/mainBody.wxml-->
+<view class="container">
+		<image wx:for="{{imgSrc}}" wx:key="index" src="{{item}}" mode="widthFix"></image>
+	</view>

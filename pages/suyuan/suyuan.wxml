@@ -1,0 +1,93 @@
+<!--pages/suyuan/suyuan.wxml-->
+<view class="mian">
+  <view class="container">
+    <view style="height:{{mtop}}px;background-color:#007AFF">
+    </view>
+    <view class="head" style="height:{{mheight}}px">
+      <view bindtap="goBack" class="back">
+        <van-icon name="arrow-left" color="#fff" size="40rpx" />
+        <text>返回</text>
+      </view>
+      <view class="title">
+        摊位信息
+
+      </view>
+    </view>
+    <view class="main-top">
+      <view class="top-title">
+        <image src="https://wap.sinxinit.com/Images/sxlogo.png" mode=""></image>
+        <view class="title-text">
+          {{AgencyName}}
+        </view>
+        <!-- <button type="primary" open-type="getPhoneNumber" lang="zh_CN" @getphonenumber="getPhoneNumber">手机号一键登录</button> -->
+      </view>
+      <view class="top-user">
+
+        <view class="user-item">
+          <view>类型：{{userType}}</view>
+          <view>档口：{{stallName}}</view>
+          <view>姓名：{{userName}}</view>
+          <view>
+            <van-rate readonly size="34rpx" value="{{ score }}" />
+          </view>
+        </view>
+        <view class="user-item">
+          <image src="{{headPic}}" mode=""></image>
+        </view>
+        <!-- <view class="user-item">
+          <view style="width: 100rpx;height:132rpx;">
+            <view class="item3-suyuan" bindtap="toggle(6)" v-if="suYuanFlag">
+              <image src="../../static/image/tracelogo.png" mode=""></image>
+              <text>溯源小票</text>
+            </view>
+          </view>
+          <view class="item3-shouhou">
+            <view bindtap="toggle(7)">
+              <image src="../../static/icon/pjtp.png" mode=""></image>
+              <text>评价</text>
+            </view>
+            <view bindtap="toggle(8)">
+              <image src="../../static/icon/tstp.png" mode=""></image>
+              <text>投诉</text>
+            </view>
+
+          </view>
+        </view> -->
+
+      </view>
+    </view>
+    <view class="main-tab">
+      <view class="tab-item {{active==index?'active':''}}" wx:for="{{imgArr}}" wx:key="index" data-index="{{index}}" bindtap="toggle">
+        <image src="{{item.src}}" mode=""></image>
+        <text>{{item.text}}</text>
+      </view>
+    </view>
+
+    <scroll-view scroll-y="true" class="scroll" enable-flex>
+      <MainBody wx:if="{{active==0}}" imgSrc='{{license}}'></MainBody>
+      <Test wx:if="{{active==1}}" ageOid='{{ageOid}}' userOId='{{userOId}}'></Test>
+      <Purchase wx:if="{{active==2}}" ageOid='{{ageOid}}' userOId='{{userOId}}'></Purchase>
+      <TodaySale wx:if="{{active==3}}" ageOid='{{ageOid}}' userOId='{{userOId}}'></TodaySale>
+      <InspectRecord wx:if="{{active==4}}" ageOid='{{ageOid}}' userOId='{{userOId}}'></InspectRecord>
+      <!-- <SuYuan v-if="active==6" :tradeoid='tradeoid' :IsJXC='IsJXC'></SuYuan> -->
+      <!-- <Evaluate v-if="active==7" :userOId='userOId'></Evaluate>
+      <Complaint v-if="active==8" :userOId='userOId'></Complaint> -->
+      <!-- echarts -->
+      <!-- uCharts放入组件中无法展示 -->
+      <view class="qiun-columns" wx:if="{{active==5}}">
+        <view class="qiun-charts">
+          <!--#ifdef MP-ALIPAY -->
+          <canvas canvas-id="canvasColumn" id="canvasColumn" class="charts" style="{{'width:'+cWidth*pixelRatio+'px;'+'height:'+cHeight*pixelRatio+'px;'+'transform:'+'scale('+(1/pixelRatio)+');'+'margin-left:'+-cWidth*(pixelRatio-1)/2+'px;'+'margin-top:'+-cHeight*(pixelRatio-1)/2+'px'}}"></canvas>
+          <!--#endif-->
+          <!--#ifndef MP-ALIPAY -->
+          <canvas canvas-id="canvasColumn" id="canvasColumn" class="charts"></canvas>
+          <!--#endif-->
+        </view>
+      </view>
+
+    </scroll-view>
+
+
+
+  </view>
+</view>

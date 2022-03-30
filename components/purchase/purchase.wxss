@@ -1,0 +1,17 @@
+/* components/purchase/purchase.wxss */
+.purchase-item {
+  margin-bottom: 20rpx;
+}
+
+.purchase-item image {
+  width: 100%;
+  height: 500rpx;
+}
+
+.item-title {
+  color: #FFFFFF;
+  background-color: #007AFF;
+  display: flex;
+  justify-content: space-around;
+  padding: 15rpx;
+}

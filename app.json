@@ -1,0 +1,114 @@
+{
+  "pages": [
+    "pages/tab/home/home",
+    "pages/tab/shops/shops",
+    "pages/senddetail/senddetail",
+    "pages/tab/categerte/categerte",
+    "pages/paydetail/paydetail",
+    "pages/recharge/recharge",
+    "pages/order/order",
+    "pages/login/login",
+    "pages/tab/cart/cart",
+    "pages/opencity/opencity",
+    "pages/redactaddress/redactaddress",
+    "pages/confirmorder/confirmorder",
+    "pages/register/register",
+    "pages/goodsinof/goodsinfo",
+    "pages/addressInfo/addressInfo",
+    "pages/newaddress/newaddress",
+    "pages/tab/me/me",
+    "pages/seach/seach",
+    "pages/shopsdetail/shopsdetail",
+    "pages/suyuan/suyuan",
+    "components/mainBody/mainBody",
+    "components/purchase/purchase",
+    "components/testinfo/testinfo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0C86FD",
+    "navigationBarTitleText": "农贸买菜",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#919191",
+    "selectedColor": "#E61D15",
+    "backgroundColor": "#fafafa",
+    "list": [
+      {
+        "pagePath": "pages/tab/home/home",
+        "text": "首页",
+        "iconPath": "/assets/icon/home.png",
+        "selectedIconPath": "/assets/icon/home-active.png"
+      },
+      {
+        "pagePath": "pages/tab/shops/shops",
+        "text": "商户",
+        "iconPath": "/assets/icon/shops.png",
+        "selectedIconPath": "/assets/icon/shops-active.png"
+      },
+      {
+        "pagePath": "pages/tab/categerte/categerte",
+        "text": "分类",
+        "iconPath": "/assets/icon/cate.png",
+        "selectedIconPath": "/assets/icon/cate-active.png"
+      },
+      {
+        "pagePath": "pages/tab/cart/cart",
+        "text": "购物车",
+        "iconPath": "/assets/icon/cart.png",
+        "selectedIconPath": "/assets/icon/cart-active.png"
+      },
+      {
+        "pagePath": "pages/tab/me/me",
+        "text": "我的",
+        "iconPath": "/assets/icon/me.png",
+        "selectedIconPath": "/assets/icon/me-active.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-button": "/miniprogram_npm/@vant/weapp/button/index",
+    "van-popup": "/miniprogram_npm/@vant/weapp/popup/index",
+    "van-search": "/miniprogram_npm/@vant/weapp/search/index",
+    "van-picker": "/miniprogram_npm/@vant/weapp/picker/index",
+    "van-tab": "/miniprogram_npm/@vant/weapp/tab/index",
+    "van-tabs": "/miniprogram_npm/@vant/weapp/tabs/index",
+    "van-card": "/miniprogram_npm/@vant/weapp/card/index",
+    "van-notice-bar": "/miniprogram_npm/@vant/weapp/notice-bar/index",
+    "van-icon": "/miniprogram_npm/@vant/weapp/icon/index",
+    "van-row": "/miniprogram_npm/@vant/weapp/row/index",
+    "van-col": "/miniprogram_npm/@vant/weapp/col/index",
+    "van-rate": "/miniprogram_npm/@vant/weapp/rate/index",
+    "van-goods-action": "/miniprogram_npm/@vant/weapp/goods-action/index",
+    "van-goods-action-icon": "/miniprogram_npm/@vant/weapp/goods-action-icon/index",
+    "van-goods-action-button": "/miniprogram_npm/@vant/weapp/goods-action-button/index",
+    "van-stepper": "/miniprogram_npm/@vant/weapp/stepper/index",
+    "van-dropdown-menu": "/miniprogram_npm/@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "/miniprogram_npm/@vant/weapp/dropdown-item/index",
+    "van-sidebar": "/miniprogram_npm/@vant/weapp/sidebar/index",
+    "van-sidebar-item": "/miniprogram_npm/@vant/weapp/sidebar-item/index",
+    "van-tabbar": "/miniprogram_npm/@vant/weapp/tabbar/index",
+    "van-tabbar-item": "/miniprogram_npm/@vant/weapp/tabbar-item/index",
+    "van-tag": "/miniprogram_npm/@vant/weapp/tag/index",
+    "van-swipe-cell": "/miniprogram_npm/@vant/weapp/swipe-cell/index",
+    "van-submit-bar": "/miniprogram_npm/@vant/weapp/submit-bar/index",
+    "van-radio": "/miniprogram_npm/@vant/weapp/radio/index",
+    "van-radio-group": "/miniprogram_npm/@vant/weapp/radio-group/index",
+    "van-checkbox": "/miniprogram_npm/@vant/weapp/checkbox/index",
+    "van-checkbox-group": "/miniprogram_npm/@vant/weapp/checkbox-group/index",
+    "van-dialog": "/miniprogram_npm/@vant/weapp/dialog/index",
+    "van-sticky": "/miniprogram_npm/@vant/weapp/sticky/index",
+    "van-area": "/miniprogram_npm/@vant/weapp/area/index",
+    "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+    "van-cell-group": "/miniprogram_npm/@vant/weapp/cell-group/index",
+    "van-tree-select": "/miniprogram_npm/@vant/weapp/tree-select/index",
+    "van-field": "/miniprogram_npm/@vant/weapp/field/index"
+  }
+}

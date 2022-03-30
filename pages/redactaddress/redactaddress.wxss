@@ -1,0 +1,75 @@
+.main{
+  width: 100%;
+  height: 100%;
+  background-color: #FAFAFA;
+}
+.header{
+  padding: 0 40rpx;
+}
+.userinput{
+  height: 100rpx;
+}
+.userInfo{
+  display: flex;
+  /* justify-content: left; */
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.addresUser text{
+  font-size: 30rpx;
+  margin-right: 40rpx;
+}
+
+.iphoneNumber text{
+  font-size: 30rpx;
+  margin-right: 40rpx;
+}
+.address button{
+  flex: 1;
+  font-weight: normal;
+  font-size: 28rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin: 0;
+  padding: 0;
+}
+.address,.hanldeInfo,.iphoneNumber,.addresUser{
+  border-bottom: 1px solid #ccc;
+}
+.addressinfo{
+  height: 150rpx;
+  line-height: 150rpx;
+  border-bottom: 4rpx solid #ccc;
+}
+.addressInput{
+  height: 100%;
+
+}
+.default{
+  display: flex;
+  justify-content: space-between;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.save{
+  display: flex;
+  margin-top: 80rpx;
+  justify-content: left;
+}
+.save view{
+  /* width: 100rpx; */
+  flex: 1;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: white;
+  border-radius: 20rpx;
+  background: linear-gradient(#28CB92,#22D59E);
+}
+.master{
+  color: red;
+  margin-right: 20rpx!important;
+}
+

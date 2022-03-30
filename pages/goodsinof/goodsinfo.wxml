@@ -1,0 +1,92 @@
+<view class="swiper">
+  <image src="{{m2.imageUrl(img)}}" />
+</view>
+<view class="center">
+  <view class="goodsPrice">
+    <view class="title">
+      <text class="name">{{goodsInfo[0].CmdName}}</text> <text class="kucun" wx:if="{{goodsStatus}}"  >库存 {{goodsSum}} </text>
+    </view>
+    <view class="price">
+      <text>￥{{goodsInfo[0].Price}}</text>
+      <text>{{commercialList[0].DelPrice==0?'':'￥'+commercialList[0].DelPrice}}</text>
+      <!-- {{goodsInfo[0].DelPrice==0?'':'￥'+goodsInfo[0].DelPrice}} -->
+    </view>
+    <!-- 规格 -->
+    <view class="specList">
+      <view class="head op">
+        <view class="cop">规格名</view>
+        <view class="cop">现价</view>
+        <view class="cop">原价</view>
+      </view>
+      <view wx:for="{{commercialList}}" wx:key="BindSpecsOId" class="items op">
+        <view class="cop">{{item.SpecName}}</view>
+        <view class="cop">{{item.Price}}元</view>
+        <view class="cop yprice">{{item.DelPrice}}元</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 列表 -->
+<view class="goodsListItem" bindtap="onClickVideo">
+    <image src="/assets/image/user2.png"></image>
+    <view class="goodsListTitle">
+      <view>商家</view>
+      <view>查看商户所售商品</view>
+    </view>
+    <view class="look">
+        进店看看 >
+    </view>
+</view>
+
+<view>
+  <van-tabs line-width="60" active="{{ 0 }}" bind:change="onChange">
+    <van-tab title="商品信息">
+      <import src="../../assets/wxParse/wxParse.wxml"></import>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
+    </van-tab>
+    <!-- <van-tab title="溯源信息"></van-tab> -->
+  </van-tabs>
+</view>
+<view>
+  <van-goods-action>
+    <van-goods-action-icon icon="goods-collect-o" open-type='share' text="分享" bind:click="onShareAppMessage" ></van-goods-action-icon>
+    <van-goods-action-icon icon="cart-o" text="购物车" bind:click="onClickIcon" />
+    <van-goods-action-button text="加入购物车" type="warning" bind:click="onClickBtnCart" />
+    <van-goods-action-button text="立即购买" bind:click="onClickButton" />
+  </van-goods-action>
+</view>
+<!-- 弹出框 -->
+<van-popup show="{{ show }}" position="bottom" custom-style="height: 45%;" bind:close="onClose" closeable class="popup">
+  <!-- 图片 -->
+  <view class="goodsImage">
+    <image lazy-load="{{true}}" src="{{m2.imageUrl(img)}}" />
+  </view>
+  <!-- 描述 -->
+  <view class="display">
+    <text>{{goodsInfo[0].CmdName}}</text>
+    <text>{{goodsprice}} 元<text class="shanchu">{{commercialList[0].DelPrice==0?'':'￥'+commercialList[0].DelPrice}}</text></text>
+  </view>
+  <!-- 规格 -->
+  <view class="guige">
+    <text>规格分类</text>
+    <view class="cateitem" >
+        <block wx:for="{{commercialList}}">
+          <view 
+          class="{{item.BindSpecsOId==BindSpecsOId?'catch':''}}"
+          bind:tap="onClickCate"
+          data-name="{{item.SpecName}}" 
+          data-id="{{item.BindSpecsOId}}" 
+          >{{item.SpecName}}</view>
+        </block>
+    </view>
+  </view>
+  <!-- 购买数量 -->
+  <view class="number">
+    <text>购买数量</text>
+    <van-stepper  input-width="80rpx" button-size="80rpx" value="{{ Goods_Number }}" bind:change="onChange" />
+  </view>
+  <view class="queding" bindtap="onQueDing">确定</view>
+</van-popup>
+
+<wxs src="./image2.wxs" module="m2"></wxs>

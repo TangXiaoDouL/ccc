@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "MainBody":"../../components/mainBody/mainBody",
+    "Test":"../../components/testinfo/testinfo",
+    "Purchase":"../../components/purchase/purchase",
+    "TodaySale":"../../components/todaysale/todaysale",
+    "InspectRecord":"../../components/insrec/insrec"
+  },
+  "navigationStyle":"custom"
+}

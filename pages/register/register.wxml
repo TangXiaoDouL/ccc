@@ -1,0 +1,55 @@
+
+<view class="header">
+      <image lazy-load="{{true}}"  class="register-img" src="/assets/image/register.png" />
+</view>
+  
+<!-- 注册页面 -->
+<view class="register-form">
+  <view class="register-panner">
+    <view wx:if="{{!y}}" class="city" bindtap="cityClick" >{{showCity?cityName:'开通城市'}} </view>
+    <view class="bazaar"  bindtap="bazaarClick">{{shichang?AgencyName:'请选择市场'}}</view>
+    <view class="phone-input">
+      <text class="iconfont icon-shoujihao phone"></text>
+      <input disabled class="number" placeholder-style="color:#C0C0C0" value="{{phone}}" bindinput="onphoneInput" placeholder="请输入您的手机号" ></input>
+    </view>
+    <!-- <view class="yanzhengma" >
+      <input placeholder="请输入验证码" value="{{yanzhengma}}" bindinput="onClickYZM"  />
+      <button class="get-code" bindtap="onClickBtn" > {{ iphnoBtn==false?iphnoMsg:iphnoNum+'秒' }}</button>
+    </view> -->
+    <view class="login" size="default" bindtap="onClickLogin" >登陆/注册</view>
+  </view>
+</view>
+
+<!-- 弹出市场-->
+<van-popup
+  show="{{ showBazaar }}"
+  position="bottom"
+  custom-style="height: 40%"
+  bind:close="onBazaarClose"
+>
+  <van-picker 
+   show-toolbar
+   columns="{{ bazaarList }}"
+   bind:change="onChange"
+   bind:cancel="quxiao"
+   bind:confirm="queding"
+   active-class="pickerClass"
+   />
+</van-popup>
+
+<!-- 弹出城市 -->
+<van-popup
+  show="{{ showBazaar2 }}"
+  position="bottom"
+  custom-style="height: 40%"
+  bind:close="onBazaarClose"
+>
+  <van-picker 
+   show-toolbar
+   columns="{{ bazaarList2 }}"
+   bind:change="onChange2"
+   bind:cancel="quxiao2"
+   bind:confirm="queding2"
+   active-class="pickerClass"
+   />
+</van-popup>

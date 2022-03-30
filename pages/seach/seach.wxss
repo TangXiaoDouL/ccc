@@ -1,0 +1,140 @@
+.c{
+  width: 100%;
+  height: 100%;
+  /* background-color: #F1F1F1; */
+}
+.main{
+  width: 100%;
+
+  background-color: #fff!important;
+}
+.history{
+  margin: 30rpx;
+  box-sizing: border-box;
+}
+.history text{
+  color: #AB956D;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+  font-size: 32rpx;
+  border-bottom: 8rpx solid #AB956D;
+  border-radius: 8rpx;
+}
+
+
+.history-content{
+  /* padding: 0 10rpx; */
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  margin-bottom: 40rpx;
+}
+.content{
+  color: #AAAAAA;
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
+  border: 2rpx solid #DEDEDE;
+  margin: 20rpx;
+  border-radius: 25rpx;
+}
+.clearBtn{
+  display: flex;
+  height: 64rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.clearBtn view{
+  flex: 1;
+  height: 100%;
+  color: #fff;
+  line-height: 64rpx;
+  text-align: center;
+  background-color: #0B86FD;
+  border: 2rpx solid #AAAAAA;
+  border-radius: 20rpx;
+}
+/* 热销 */
+.hot {
+  padding: 0 15rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20rpx;
+  background-color: #F9F9F9;
+  height: 100vh;
+  
+}
+
+.hotgoods{
+  display: flex;
+  flex-direction: column;
+  height: 430rpx;
+  border: 1rpx solid #ccc;
+  width: 45%;
+  box-sizing: border-box;
+}
+
+.seach{
+  color: red;
+}
+
+.hotgoods view:nth-of-type(1)  {
+  height: 100%;
+  text-align: center;
+}
+
+.imgStyle image{
+  border-radius: 20rpx;
+}
+
+.hotgoods view:last-child {
+  width: 100%;
+  height: 200rpx;
+  border-top: 1rpx dashed #ccc;
+
+}
+
+.hotgoods view:first-child image {
+  width: 160rpx;
+  height: 160rpx;
+  /* border-radius: 50%; */
+  margin-top: 30rpx;
+
+}
+
+.hotgoods-item view {
+  text-align: left!important;
+  height: 40rpx!important;
+  overflow: hidden;
+  color: #232323;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.hotgoods-item {
+  padding:  15rpx;
+}
+.hotgoods-item text:nth-of-type(1){
+  margin-top: 14rpx;
+  display: inline-block;
+  padding: 3rpx;
+  font-size: 24rpx;
+  background-color: #B82118;
+  color: #fff;
+}
+.hotgoods-item text:nth-of-type(2){
+  display: block;
+  margin-top: 10rpx;
+  color: #96302E;
+}
+.hotgoods{
+  border: 1rpx solid #F3F3F2 ;
+  margin-top: 10rpx;
+  border-radius: 20rpx;
+  background-color: #fff;
+}
+

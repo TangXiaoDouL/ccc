@@ -1,0 +1,42 @@
+<view class="main" >
+  <view class="header" >
+      <view class="title">
+          <view class="{{clickNum==4?'clickStyle':''}}"  data-num="{{4}}" bind:tap="onclick" >全部</view>
+          <view class="{{clickNum==2?'clickStyle':''}}"  data-num="{{2}}"  bind:tap="onclick" >今天</view>
+          <view class="{{clickNum==1?'clickStyle':''}}"  data-num="{{1}}"  bind:tap="onclick"> 昨天</view>
+          <view class="{{clickNum==3?'clickStyle':''}}"  data-num="{{3}}"  bind:tap="onclick" >本周</view>
+      </view>
+  </view>
+  <view wx:if="{{sendMoneyInfo.length<=0}}" class="nodata" >
+      暂无数据.....
+  </view>
+  <view wx:else  >
+    <view class="data" >
+          <view >
+              <image lazy-load="{{true}}" src="/assets/image/paynumber.png" />
+              <text >交易:<text class="fontstyle">{{length}}笔</text></text>
+          </view>
+          <view>
+              <image lazy-load="{{true}}" src="/assets/image/paymonny.png" />
+              <text >消费:<text class="fontstyle">￥{{sendMonny}}元</text></text>
+          </view>
+   </view>
+   <!-- 内容 -->
+   <view class="content" >
+      <block wx:for="{{sendMoneyInfo}}" wx:key="index">
+          <view class="order" >
+          <view class="order-title">单号:{{item.BusinessNo}}</view>
+          <view class="info" >
+              <text>{{item.OPTypeName}}</text>
+              <text>￥{{item.TranMoney}}</text>
+              <text>{{item.TranTime}}</text>
+          </view>
+      </view>
+      </block>
+        
+   </view>
+  </view>
+  
+    
+
+</view>

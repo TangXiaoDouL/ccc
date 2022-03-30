@@ -1,0 +1,20 @@
+<!--components/testinfo/testinfo.wxml-->
+<view>
+		<view class="test-card">
+			<view class="card-item" wx:for="{{itemData}}" wx:key='index'>
+				<view class="item-left">
+					<image src="{{item.Img}}"></image>
+				</view>
+				<view class="item-right">
+					<view>{{item.CdName}}</view>
+					<view>快检项目：{{item.ChkProject}}</view>
+					<view>快检结果：<text :class="{red:item.ChkValue==1}">{{item.ChkValue==0?'合格':'不合格'}}</text></view>
+					<view>快检员：{{item.ChkOpInfo}}</view>
+					<view>
+						<image src="../../static/image/icon-time.png" mode=""></image>
+						<text>{{item.AddTime}}</text>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
